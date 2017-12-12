@@ -31,7 +31,7 @@ void setup()
   // Defaults after init are 434.0MHz, 13dBm, Bw = 125 kHz, Cr = 4/5, Sf = 128chips/symbol, CRC on
   rf95.setFrequency(frequency);
 
-  rf95.setTxPower(13, false);
+  rf95.setTxPower(20, false);
   
   rf95.setCADTimeout(10000);
   Serial.println("Waiting for radio to setup");

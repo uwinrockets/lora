@@ -45,7 +45,7 @@ uint8_t buf[RH_RF95_MAX_MESSAGE_LEN];
 
 void loop()
 {
-  Process time;
+  
   if (manager.available())
   {
     // Wait for a message addressed to us from the client
