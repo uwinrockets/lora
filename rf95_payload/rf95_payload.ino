@@ -1,4 +1,4 @@
-// rf95_payload
+// rf95_payload client
 // Sends data to the Base
 // LoRa Simple Server for Arduino :
 // Support Devices: LoRa Shield/GPS + Arduino
@@ -39,13 +39,13 @@ void setup()
   Serial.println("Setup completed");
 }
 
-uint8_t data[] = "Hello World ! I'm happy if you can read me";
+uint8_t data[] = "Hello World Base ! I'm happy if you can read me";
 // Dont put this on the stack:
 uint8_t buf[RH_RF95_MAX_MESSAGE_LEN];
 
 void loop()
 {
-  Serial.println("Sending to rf95_server");
+  Serial.println("Sending to base");
     
   // Send a message to manager_server
   if (manager.sendtoWait(data, sizeof(data), SERVER_ADDRESS))
@@ -64,11 +64,11 @@ void loop()
     }
     else
     {
-      Serial.println("No reply, is rf95_server running?");
+      Serial.println("No reply, is base running?");
     }
   }
   else
-    Serial.println("sendtoWait failed");
+    Serial.println("sendtoWait failed - this is payload");
   delay(500);
 }
 

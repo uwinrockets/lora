@@ -1,4 +1,4 @@
-// rf95_base
+// rf95_base server
 // Recieves the data from the Payload
 // LoRa Simple Client for Arduino :
 // Support Devices: LoRa Shield + Arduino
@@ -39,7 +39,7 @@ delay(1000);
 Serial.println("Setup completed");
 }
 
-uint8_t data[] = "And hello back to you";
+//uint8_t data[] = "And hello back to you";
 // Dont put this on the stack:
 uint8_t buf[RH_RF95_MAX_MESSAGE_LEN];
 
@@ -57,12 +57,12 @@ void loop()
       Serial.print(from, HEX);
       Serial.print(": ");
       Serial.println((char*)buf);
-      Serial.print("RSSI: ");
-      Serial.println(rf95.lastRssi(), DEC);
+      //Serial.print("RSSI: ");
+      //Serial.println(rf95.lastRssi(), DEC);
 
       // Send a reply back to the originator client
       if (!manager.sendtoWait(data, sizeof(data), from))
-        Serial.println("sendtoWait failed");
+        Serial.println("sendtoWait failed - this is base");
     }
   }
 }
